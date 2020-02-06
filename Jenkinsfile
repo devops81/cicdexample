@@ -19,6 +19,7 @@ pipeline {
     stage('Fluffy Deploy') {
       steps {
         echo 'Fluffy Deploy'
+        archiveArtifacts(artifacts: 'feed-combiner-java8-webapp/target/*.war', fingerprint: true, onlyIfSuccessful: true)
       }
     }
 
